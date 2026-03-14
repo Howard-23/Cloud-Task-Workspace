@@ -1,0 +1,354 @@
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-elevated);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__header,
+.card__body {
+  padding: var(--space-4);
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card__title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card__description {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+}
+
+.badge--neutral {
+  color: var(--color-text);
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.badge--info {
+  color: var(--color-info);
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.badge--success {
+  color: var(--color-success);
+  background: rgba(15, 159, 110, 0.12);
+}
+
+.badge--warning {
+  color: var(--color-warning);
+  background: rgba(220, 139, 22, 0.14);
+}
+
+.badge--danger {
+  color: var(--color-danger);
+  background: rgba(214, 66, 83, 0.12);
+}
+
+.avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  overflow: hidden;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #46a0ff, var(--color-accent));
+}
+
+.avatar--md {
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.metric-card__label,
+.metric-card__detail {
+  display: block;
+}
+
+.metric-card__label {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.metric-card__value {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.metric-card__detail {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.metric-stack,
+.pill-grid,
+.activity-list,
+.deadline-list,
+.project-teaser-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.metric-stack__item {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-strong);
+}
+
+.metric-stack__item strong {
+  display: block;
+  font-size: 1.45rem;
+}
+
+.pill-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pill-grid span,
+.action-card,
+.project-teaser,
+.board-task {
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.activity-list__item,
+.deadline-list__item,
+.member-row,
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.activity-list__item:last-child,
+.deadline-list__item:last-child,
+.member-row:last-child,
+.settings-row:last-child {
+  border-bottom: 0;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.summary-label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.project-card__stats,
+.board-task__meta,
+.deadline-list__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.project-card__action,
+.project-teaser__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.project-progress {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.project-progress__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.project-progress__track {
+  width: 100%;
+  height: 0.55rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.project-progress__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--color-accent), #46a0ff);
+}
+
+.notification-list {
+  display: grid;
+}
+
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-4);
+  text-align: left;
+  border-top: 1px solid var(--color-border);
+  background: transparent;
+}
+
+.notification-item:first-child {
+  border-top: 0;
+}
+
+.notification-item--unread {
+  background: rgba(20, 99, 255, 0.06);
+}
+
+.comment-thread,
+.comment-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.comment-item__body {
+  display: grid;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.comment-item__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.calendar-grid__weekday {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.calendar-day {
+  min-height: 170px;
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.calendar-day--empty {
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.calendar-day__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.calendar-day__stack {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.calendar-task {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: 12px;
+  background: var(--color-bg-elevated);
+}
+
+.calendar-task__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.calendar-day__more {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.action-card {
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.action-card:hover,
+.action-card--active {
+  transform: translateY(-2px);
+  border-color: rgba(20, 99, 255, 0.32);
+}
+
+@media (max-width: 900px) {
+  .project-grid,
+  .summary-grid,
+  .action-grid,
+  .pill-grid,
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}

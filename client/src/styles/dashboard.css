@@ -1,0 +1,39 @@
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.board-column .card__body {
+  min-height: 420px;
+}
+
+.board-column__stack {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.project-teaser,
+.board-task,
+.action-card {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.project-teaser:hover,
+.board-task:hover,
+.action-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(20, 99, 255, 0.24);
+  box-shadow: var(--shadow-sm);
+}
+
+.toolbar--stack {
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (max-width: 1080px) {
+  .board-grid {
+    grid-template-columns: 1fr;
+  }
+}

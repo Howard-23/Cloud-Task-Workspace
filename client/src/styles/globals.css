@@ -1,0 +1,151 @@
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at top left, rgba(20, 99, 255, 0.14), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(15, 159, 110, 0.12), transparent 26%),
+    var(--color-bg);
+  line-height: 1.55;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.16;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+}
+
+h2 {
+  font-size: var(--text-2xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+strong {
+  color: var(--color-text);
+}
+
+::selection {
+  background: rgba(20, 99, 255, 0.18);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(20, 99, 255, 0.32);
+  outline-offset: 2px;
+}
+
+.public-shell,
+.auth-shell,
+.dashboard-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-8);
+}
+
+.auth-shell .card {
+  width: min(100%, 540px);
+}
+
+.landing {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+  padding: var(--space-6) 0 var(--space-10);
+}
+
+.landing--narrow {
+  max-width: 960px;
+}
+
+.page-stack {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.form-stack {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.inline-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.stack-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.page-loader {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.page-hero {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.hero h1,
+.page-hero h1 {
+  font-size: var(--text-hero);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.section-grid--double {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .form-grid,
+  .section-grid,
+  .section-grid--double {
+    grid-template-columns: 1fr;
+  }
+}
