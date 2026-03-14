@@ -21,16 +21,16 @@ export async function getProjectById(id) {
 }
 
 export async function createProject(payload) {
-  const response = await api.post('/projects/create', normalizeProjectPayload(payload));
+  const response = await api.post('/projects', normalizeProjectPayload(payload));
   return extractData(response).project;
 }
 
 export async function updateProject(payload) {
-  const response = await api.put('/projects/update', normalizeProjectPayload(payload));
+  const response = await api.put('/projects', normalizeProjectPayload(payload));
   return extractData(response).project;
 }
 
 export async function deleteProject(id) {
-  const response = await api.delete('/projects/delete', { data: { id } });
+  const response = await api.delete('/projects', { data: { id } });
   return extractData(response).project;
 }

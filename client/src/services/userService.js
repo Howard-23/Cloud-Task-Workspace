@@ -14,12 +14,12 @@ export async function verifyUser() {
 }
 
 export async function getUserProfile() {
-  const response = await api.get('/users/profile');
+  const response = await api.get('/users');
   return extractData(response);
 }
 
 export async function updateUserProfile(payload) {
-  const response = await api.put('/users/update', {
+  const response = await api.put('/users', {
     ...payload,
     avatarUrl: payload.avatarUrl || '',
   });

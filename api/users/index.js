@@ -1,14 +1,18 @@
-const { deleteProjectController } = require('../../server/controllers/projectController');
+const { getProfileController, updateProfileController } = require('../../server/controllers/userController');
 const { withErrorHandler } = require('../../server/middleware/errorHandler');
 const { withAuth } = require('../../server/middleware/authMiddleware');
 const { allowMethods } = require('../../server/middleware/methodGuard');
 
 module.exports = withErrorHandler(
   withAuth(async (req, res) => {
-    if (!allowMethods(req, res, ['DELETE'])) {
+    if (!allowMethods(req, res, ['GET', 'PUT'])) {
       return;
     }
 
-    return deleteProjectController(req, res);
+    if (req.method === 'GET') {
+      return getProfileController(req, res);
+    }
+
+    return updateProfileController(req, res);
   }),
 );

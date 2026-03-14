@@ -19,16 +19,16 @@ export async function getTaskById(id) {
 }
 
 export async function createTask(payload) {
-  const response = await api.post('/tasks/create', normalizeTaskPayload(payload));
+  const response = await api.post('/tasks', normalizeTaskPayload(payload));
   return extractData(response).task;
 }
 
 export async function updateTask(payload) {
-  const response = await api.put('/tasks/update', normalizeTaskPayload(payload));
+  const response = await api.put('/tasks', normalizeTaskPayload(payload));
   return extractData(response).task;
 }
 
 export async function deleteTask(id) {
-  const response = await api.delete('/tasks/delete', { data: { id } });
+  const response = await api.delete('/tasks', { data: { id } });
   return extractData(response).task;
 }
