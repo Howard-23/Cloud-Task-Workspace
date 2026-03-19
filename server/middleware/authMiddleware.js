@@ -2,6 +2,10 @@ const { isFirebaseAdminConfigured, verifyIdToken } = require('../config/firebase
 const { ensureAuthUser } = require('../services/userService');
 const { AppError } = require('../utils/errors');
 
+function isTruthyEnv(value) {
+  return typeof value === 'string' && ['1', 'true', 'yes', 'on'].includes(value.trim().toLowerCase());
+}
+
 function getBearerToken(req) {
   const header = req.headers.authorization || req.headers.Authorization;
 
@@ -43,7 +47,7 @@ async function resolveAuthenticatedUser(token) {
     return verifyIdToken(token);
   }
 
-  if (process.env.NODE_ENV === 'production') {
+  if (!isTruthyEnv(process.env.ALLOW_UNVERIFIED_FIREBASE_AUTH)) {
     throw new AppError(
       'Firebase Admin credentials are missing. Configure the server environment variables first.',
       503,
